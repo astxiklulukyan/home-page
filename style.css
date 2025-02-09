@@ -1,0 +1,123 @@
+/*
+Theme Name: Agency Home Theme
+Theme URI: http://example.com/
+Author: Astghik
+Author URI: http://example.com/
+Description: A custom WordPress theme.
+Version: 1.0
+License: GNU General Public License v2 
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mycustomtheme
+*/
+
+@import "tailwindcss";
+@import "./assets/css/fonts.css";
+
+
+@theme {
+    --custom-container: 1299px;
+
+    /*fonts*/
+    --font-inter: Inter, sans-serif;
+    --font-inter-bold: Inter-Bold, sans-serif;
+    --font-inter-medium: Inter-Medium, sans-serif;    
+    --font-inter-semibold: Inter-SemiBold, sans-serif;
+
+    /*colors*/
+    --color-primary: #333;
+    --color-secondary: #0099FF;
+    --color-secondary-extra-light: #E5F5FF;
+    --color-gray-placeholder: #999999;
+    --color-gray-light: #494949;
+
+    --button-width: 200px;
+    
+    /*headings*/
+    --heading-1: 3.5rem;
+    --heading-2: 2rem;
+    --heading-3: 2.5rem;
+
+    /*line-heights*/
+    --heading-1-line-height: 3.85rem;
+    --heading-2-line-height: 3.3rem;
+    --heading-3-line-height: 2.75rem;
+    --heading-4-line-height: 2.4rem;
+    --heading-5-line-height: 1.65rem;
+
+    /*shadows*/
+    --card-display: 0px_10px_20px_rgba(164,217,253,0.15);
+}
+
+@layer base {
+    html {
+        @apply font-inter;
+    }
+
+    h1 {
+        @apply font-inter-bold;
+        font-size: var(--heading-1);
+        line-height: --heading-1-line-height;
+        color: var(--color-primary);
+    }
+
+    h2 {
+        @apply text-5xl font-inter-bold;
+        line-height: --heading-2-line-height;
+        color: var(--color-primary);
+    }
+
+    h3 {
+        @apply font-inter-medium;
+        font-size: var(--heading-3);
+        line-height: --heading-3-line-height;
+        color: var(--color-primary);
+    }
+
+    h4 {
+        @apply font-inter-bold;
+        font-size:  var(--heading-2);
+        line-height: --heading-4-line-height;
+        color: var(--color-primary);
+    }
+
+    h5 {
+        @apply text-2xl font-inter-bold;
+        line-height: --heading-5-line-height;
+        color: var(--color-primary);
+    }
+
+    h6 {
+        @apply text-xl font-inter-semibold leading-snug;
+        color: var(--color-primary);
+    }
+
+    .text-small {
+        @apply text-sm;
+        line-height: 155%;
+    }
+
+    details summary img {
+        transition: transform 0.3s ease; 
+    }    
+      
+    details[open] summary img {
+        transform: rotate(90deg); 
+    }
+
+    .custom-button {
+        @apply px-6 py-3 rounded-sm min-w-2 font-inter-medium text-lg text-center inline-block cursor-pointer;       
+        min-width: var(--button-width);
+    }
+
+    .primary-button {
+       @apply border border-secondary bg-secondary text-white;
+    }
+
+    .secondary-button {
+        @apply border border-secondary bg-white text-secondary;
+    }
+}
+
+
+
+
